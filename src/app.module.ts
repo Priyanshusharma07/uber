@@ -6,7 +6,7 @@ import { RedisModule } from '@liaoliaots/nestjs-redis';
 import { UserModule } from './user/user.module';
 import { AuthModule } from './auth/auth.module';
 import { redisService } from './redis/redis.service';
-import { MapsModule } from './maps/maps.module';
+
 
 @Module({
   imports: [
@@ -19,7 +19,7 @@ import { MapsModule } from './maps/maps.module';
     }),
     UserModule,
     AuthModule,
-    MapsModule,
+
   ],
   controllers: [AppController],
   providers: [AppService, redisService],
