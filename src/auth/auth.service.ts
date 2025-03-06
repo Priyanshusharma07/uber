@@ -2,6 +2,7 @@
 import {  Injectable } from '@nestjs/common';
 import { redisService } from 'src/redis/redis.service';
 import { PasetoService } from './token/paseto.service';
+import { UserService } from 'src/user/user.service';
 
 
 @Injectable()
@@ -9,6 +10,7 @@ export class AuthService {
     constructor(
         private readonly redisService: redisService,
         private readonly paseto:PasetoService,
+
     ) { }
 
     async generateOTP(): Promise<string> {

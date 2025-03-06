@@ -10,10 +10,11 @@ import { PassportModule } from '@nestjs/passport';
 import { FacebookStrategy } from './token/facebook.strategy';
 import { User, UserSchema } from 'src/schema/user.schema';
 import { GithubStrategy } from './token/git.strategy';
+import { UserModule } from 'src/user/user.module';
 
 
 @Module({
-  imports:[RedisModule,ConfigModule.forRoot({ isGlobal: true }),PassportModule],
+  imports:[RedisModule,ConfigModule.forRoot({ isGlobal: true }),PassportModule,UserModule],
   controllers: [AuthController],
   providers: [AuthService,redisService,PasetoService,GoogleStrategy,FacebookStrategy,GithubStrategy]
 })
